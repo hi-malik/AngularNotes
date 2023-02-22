@@ -1,0 +1,12 @@
+<hr>
+<h1>Display here</h1>
+
+<input type="text" #box (keyup)="getValue(box.value)" placeholder="Viraj"/>
+
+<p> Direct Display : {{displayVal}}</p>
+<br /><br />
+<input type="text" #box1 placeholder="Viraj"/>
+<br /><br />
+<button #box1 (click)= "getButtonval(box1.value)">Click To Display</button>
+<p> Button Display : {{buttonDisp}}</p>
+<hr>

@@ -1,0 +1,20 @@
+<button (click) = "getClick('Himanshu', 'Malik')">Click Me</button>
+<br />
+<button (click) = "getConsole('Clicked')">Inspect Me</button>
+<br /> <br />
+<input type = "text" (keyup) = "getData('Key')" placeholder="Count Words" />
+<br />
+<br />
+<input type = "text" #box (keyup) = "getData(box.value)" placeholder="Until pressed will be typed" />
+<br />
+<br />
+<input type = "text" #box1 (keydown) = "getData(box1.value)" placeholder="Type in different box key released" />
+<br />
+<br />
+<input type = "text" #box2 (blur) = "getData(box2.value)" placeholder="when click out" />
+<br />
+<br />
+<h1 (mouseover) = "getData('over')" >MouseOver Text</h1>
+<br />
+<br />
+<h1 (mouseleave) = "getData('leave')" >MouseLeave Text</h1>
