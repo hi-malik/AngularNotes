@@ -10,6 +10,7 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { UserAuthModule } from "./user-auth/user-auth.module";
 import { EventsComponent } from './events/events.component';
 import { DisplayComponent } from './display/display.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { DisplayComponent } from './display/display.component';
         LogoutComponent,
         ForgotPassComponent,
         EventsComponent,
-        DisplayComponent
+        DisplayComponent,
+        ButtonComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
