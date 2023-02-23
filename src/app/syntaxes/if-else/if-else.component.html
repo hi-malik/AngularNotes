@@ -1,0 +1,34 @@
+<hr>
+<p>If-Else conditiion here</p>
+
+<h1 *ngIf = "show; then ifBlock else elseBlock">Showing If condition></h1>
+
+<ng-template #ifBlock>
+  <h1>Showing If condition</h1>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>Showing Else condition</h1>
+</ng-template>
+<br />
+<hr>
+<p>Else-If conditiion here</p>
+<ng-template [ngIf] = "color === 'red'">
+    <h1 style = "color : red">Red</h1>
+</ng-template>
+<ng-template [ngIf] = "color === 'yellow'">
+    <h1 style = "color : yellow">Yellow</h1>
+</ng-template>
+<ng-template [ngIf] = "color === 'blue'">
+    <h1 style = "color : blue">Blue</h1>
+</ng-template>
+
+<br />
+<hr>
+<h2>Switch Cases</h2>
+<div [ngSwitch]="color">
+    <h4 *ngSwitchCase="'red'"> Red Color</h4>
+    <h4 *ngSwitchCase="'green'"> Green Color</h4>
+    <h4 *ngSwitchCase="'blue'"> Blue Color</h4>
+    <h4 *ngSwitchCase="'yellow'"> Yellow Color</h4>
+    <h4 *ngSwitchDefault>Unknown Color</h4>
+</div>

@@ -1,0 +1,17 @@
+<br/>
+<hr>
+<p>loop works!</p>
+
+<h3 *ngFor = "let i of user" >{{i}}</h3>
+<h4 *ngFor = "let i of userDetails">{{i.name}} ---> {{i.phone}}</h4>
+
+<ul *ngFor = "let i of name">
+    <li>{{i}}</li>
+    <ul *ngFor = "let i of nameDetails">
+        <li>{{i.other}}</li>
+        <!-- <ul *ngFor = "let i of nameDetails.other">
+            <li>{{i}}</li>
+        </ul> -->
+
+    </ul>
+</ul>

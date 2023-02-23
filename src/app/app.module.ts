@@ -11,6 +11,8 @@ import { UserAuthModule } from "./user-auth/user-auth.module";
 import { EventsComponent } from './events/events.component';
 import { DisplayComponent } from './display/display.component';
 import { ButtonComponent } from './button/button.component';
+import { SyntaxesModule } from "./syntaxes/syntaxes.module";
+import { BindingComponent } from './binding/binding.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +23,8 @@ import { ButtonComponent } from './button/button.component';
         ForgotPassComponent,
         EventsComponent,
         DisplayComponent,
-        ButtonComponent
+        ButtonComponent,
+        BindingComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -29,6 +32,8 @@ import { ButtonComponent } from './button/button.component';
         BrowserModule,
         AppRoutingModule,
         UserAuthModule // register here
+        ,
+        SyntaxesModule
     ]
 })
 export class AppModule { }
