@@ -10,6 +10,8 @@ export class AppComponent {
   getAny(){
     return "Hi Lore, I am from getAny()";
   }
-
+  getRegister(val : any){
+    console.warn(val)
+  }
   
 }

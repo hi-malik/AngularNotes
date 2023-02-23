@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { DisplayComponent } from './display/display.component';
 import { ButtonComponent } from './button/button.component';
 import { SyntaxesModule } from "./syntaxes/syntaxes.module";
 import { BindingComponent } from './binding/binding.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
     declarations: [
@@ -24,11 +26,13 @@ import { BindingComponent } from './binding/binding.component';
         EventsComponent,
         DisplayComponent,
         ButtonComponent,
-        BindingComponent
+        BindingComponent,
+        HeaderComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
     imports: [
+        FormsModule,
         BrowserModule,
         AppRoutingModule,
         UserAuthModule // register here
