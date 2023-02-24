@@ -2,22 +2,29 @@
 
 <hr>
 
-<form>
-  <input type = "text" name="user" placeholder="user-name"/>
-  <br/><br/>
-  <input type = "email" name="email" placeholder="user-email"/>
-  <br/><br/>
-  <input type = "password" name="pass" placeholder="user-password"/>
-  <br/><br/>
+<form #basic="ngForm" (ngSubmit)="getRegister(basic.value)">
+  <input type="text" ngModel name="user" placeholder="user-name" />
+  <br /><br />
+  <input type="email" ngModel name="email" placeholder="user-email" />
+  <br /><br />
+  <input type="password" ngModel name="pass" placeholder="user-password" />
+  <br /><br />
   <button (click)="getRegister('value')">Register</button>
 </form>
 
+<ul>
+  <li>{{data.user}}</li>
+  <li>{{data.email}}</li>
+  <li>{{data.pass}}</li>
+</ul>
+
 <hr>
 
-<h1 class = "colore">Hello World {{title}}</h1>
+<h1 class="colore">Hello World {{title}}</h1>
 
 <style>
-  .colore{ /* Internal Style */
+  .colore {
+    /* Internal Style */
     color: blue;
   }
 </style>
@@ -47,3 +54,90 @@
 <app-loop></app-loop>
 
 <app-binding></app-binding>
+
+<hr>
+
+<div>
+  <p>Toggle Button</p>
+  <h1 *ngIf="display">Hide me</h1>
+  <button (click)="getHide()">ClickHere</button>
+</div>
+
+<hr>
+
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+
+<hr>
+<section>
+  <div class="example-label">Basic</div>
+  <div class="example-button-row">
+    <button mat-button>Basic</button>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button color="warn">Warn</button>
+    <button mat-button disabled>Disabled</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
+</section>
+
+<hr>
+
+<h1>ToDo Lost wth Angular</h1>
+
+<input type = "text" #basic placeholder="Entr Ur ToDo"/>
+
+<button #basic (click)="getData(basic.value)">Add Task</button>
+
+<ul *ngFor = "let i for todoData">
+  <li>{{i.name}} <button (click)="removeData(i.id)">Remove</button> </li>
+</ul>
+
+<br />
+<hr>
+
+<app-child [item] = "dte"></app-child>
+<button (click) = "removeDte()">UpdateChildComponent</button>
+
+<hr>
+
+<!-- <ul *ngFor= "let i of userDetails">
+  <app-user-detail></app-user-details>
+</ul> -->
+
+<input type = "text" [(ngModel)] = "name"/>
+
+<h3>{{name}}</h3>
+
+<hr>
+<h1>{{Hello | uppercase | slice : 3 : 5}}</h1>
+
+<ul *ngFor = "let i of userDetails">
+  <li>{{i | json}}</li>
+</ul>
+
+<h3>{{"hello how are you" | titlecase}}</h3>
+
+<hr>
+<br />
+<p>Custom Pipes</p>
+<h1>{{20 | usdInr }}</h1>
+
+<hr>
+<form #loginForm = "ngForm" (ngSubmit)= "userLogin(loginForm.value)">
+  <input type = "text" placeholder="Enter name" name = "name" ngModel/>
+  <br>
+  <input type="password" placeholder="Enter Password" name = "password" ngModel/>
+  <br>
+  <button>Submit</button>
+</form>
+<br><br>
+<hr>
+<form [formGroup] = "lginForm" (ngSubmit)= "loginData()">
+  <input type = "text" placeholder="Enter name" name = "name" formControlName = "name"/>
+  <br>
+  <span style="color : red" *ngIf="validy && validy.invalid && validy.touched">This requires</span>
+  <input type="password" placeholder="Enter Password" name = "password" formControlName = "password"/>
+  <br>
+  <!-- <span style="color : red" *ngIf="password && password.invalid && password.touched">This requires</span> -->
+  <button [disabled] = "loginForm.invalid">Submit</button>
+</form>
